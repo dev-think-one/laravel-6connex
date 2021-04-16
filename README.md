@@ -10,7 +10,7 @@ composer require yaroslawww/laravel-6connex
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="SixConnex\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="LaravelSixConnex\ServiceProvider" --tag="config"
 ```
 Configuration in *.env*
 ```dotenv
