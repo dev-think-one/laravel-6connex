@@ -20,7 +20,7 @@ class TestCase extends Orchestra
 
     public function defineEnvironment($app)
     {
-        $app['config']->set('ptions.production', false);
+        $app['config']->set('sixconnex.options.production', false);
         $app['config']->set('sixconnex.api_username', 'some_api_username');
         $app['config']->set('sixconnex.api_password', 'some_api_password');
     }
