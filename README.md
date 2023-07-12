@@ -59,16 +59,20 @@ SixConnex::usersRequest()
 ```
 or
 ```php
-SixConnex::usersRequest()->setApiCall('read')
+SixConnex::usersRequest()
+    ->setApiCall('read')
     ->addOption('email', 'pieter.tester@6connex.test')
     ->addOption('event_id', 123)
-    ->call()->json();
+    ->call()
+    ->json();
 ```
 or
 ```php
-SixConnex::usersRequest()->setApiCall('read')
+SixConnex::usersRequest()
+    ->setApiCall('read')
     ->addOption(['email'=>'pieter.tester@6connex.test', 'event_id' => 123])
-    ->call()->json();
+    ->call()
+    ->json();
 ```
 
 Result
