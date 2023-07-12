@@ -14,7 +14,7 @@ class SixConnexResponseTest extends TestCase
     public function raw_response()
     {
         /** @var Response $spy */
-        $spy = $this->spy(Response::class);
+        $spy      = $this->spy(Response::class);
         $response = new SixConnexResponse($spy);
 
         $this->assertEquals($spy, $response->getRawResponse());
@@ -24,7 +24,7 @@ class SixConnexResponseTest extends TestCase
     public function output_first()
     {
         /** @var Response|Mock $spy */
-        $spy = $this->spy(Response::class);
+        $spy      = $this->spy(Response::class);
         $response = new SixConnexResponse($spy);
 
         $spy->shouldReceive('collect')
@@ -32,9 +32,9 @@ class SixConnexResponseTest extends TestCase
             ->with('apicallsetoutput')
             ->andReturn(collect([
                 [
-                    'test' => 'testValue',
-                    '_apicall' => 'read',
-                    '_apicallresultcode' => 1,
+                    'test'                  => 'testValue',
+                    '_apicall'              => 'read',
+                    '_apicallresultcode'    => 1,
                     '_apicallresultmessage' => 'test',
                 ],
                 [],
@@ -50,7 +50,7 @@ class SixConnexResponseTest extends TestCase
     public function propangate_call()
     {
         /** @var Response|Mock $spy */
-        $spy = $this->spy(Response::class);
+        $spy      = $this->spy(Response::class);
         $response = new SixConnexResponse($spy);
 
         $spy->shouldReceive('someMethod')

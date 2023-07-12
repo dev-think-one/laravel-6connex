@@ -24,13 +24,13 @@ class SixConnexApi
     public function __construct(string $clientDomain, string $username, string $password, array $options = [])
     {
         $this->clientDomain = $clientDomain;
-        $this->username = $username;
-        $this->password = $password;
+        $this->username     = $username;
+        $this->password     = $password;
 
         $this->topLevelDomain = (string) ($options['top_level_domain'] ?? 'com');
-        $this->ssl = (bool) ($options['ssl'] ?? true);
-        $this->production = (bool) ($options['production'] ?? true);
-        $this->guzzle = $options['guzzle'] ?? [];
+        $this->ssl            = (bool) ($options['ssl'] ?? true);
+        $this->production     = (bool) ($options['production'] ?? true);
+        $this->guzzle         = $options['guzzle'] ?? [];
     }
 
     public function isProduction(): bool
@@ -59,11 +59,11 @@ class SixConnexApi
      */
     public function url(string $path = ''): string
     {
-        $middle = $this->production ? '6connex' : '6connexstage';
+        $middle   = $this->production ? '6connex' : '6connexstage';
         $protocol = $this->ssl ? 'https' : 'http';
 
         $base = "{$protocol}://{$this->clientDomain}.{$middle}.{$this->topLevelDomain}";
-        if ($path && ! Str::startsWith($path, '/')) {
+        if ($path && !Str::startsWith($path, '/')) {
             $path = "/$path";
         }
 

@@ -7,8 +7,8 @@ use Illuminate\Support\Collection;
 
 class SixConnexOutput
 {
-    public static string $typeParameter = '_apicall';
-    public static string $codeParameter = '_apicallresultcode';
+    public static string $typeParameter    = '_apicall';
+    public static string $codeParameter    = '_apicallresultcode';
     public static string $messageParameter = '_apicallresultmessage';
 
     protected array $body = [];
@@ -85,6 +85,6 @@ class SixConnexOutput
 
     public function failed(): bool
     {
-        return ! $this->successful();
+        return !$this->successful();
     }
 }

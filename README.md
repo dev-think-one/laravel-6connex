@@ -1,11 +1,20 @@
 # Laravel: 6connex API integration
 
+![Packagist License](https://img.shields.io/packagist/l/think.studio/laravel-6connex?color=%234dc71f)
+[![Packagist Version](https://img.shields.io/packagist/v/think.studio/laravel-6connex)](https://packagist.org/packages/think.studio/laravel-6connex)
+[![Total Downloads](https://img.shields.io/packagist/dt/think.studio/laravel-6connex)](https://packagist.org/packages/think.studio/laravel-6connex)
+[![Build Status](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/badges/build.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-6connex/?branch=main)
+
+Documentation [here](docs%2F6Connex_API_REGISTRATION_STEPS.pdf)
+
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require yaroslawww/laravel-6connex
+composer require think.studio/laravel-6connex
 ```
 
 You can publish the config file with:

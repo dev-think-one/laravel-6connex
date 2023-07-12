@@ -39,28 +39,28 @@ class FieldsSizeValidator
     protected $useLimit = false;
 
     protected $fields = [
-        'default' => 64,
-        'firstname' => 64,
-        'lastname' => 64,
-        'email' => 64,
-        'password' => 30,
-        'title' => 64,
-        'company' => 64,
-        'profile_image' => 512,
-        'language' => 32,
+        'default'           => 64,
+        'firstname'         => 64,
+        'lastname'          => 64,
+        'email'             => 64,
+        'password'          => 30,
+        'title'             => 64,
+        'company'           => 64,
+        'profile_image'     => 512,
+        'language'          => 32,
         'entitlement_group' => 128,
-        'registration_set' => 80,
-        'address1' => 512,
-        'address2' => 512,
-        'zipcode' => 16,
-        'city' => 64,
-        'state_province' => 64,
-        'country' => 128,
-        'country_code' => 20, // This is the phone number’s country code, not the ISO code of country field.
-        'area_code' => 20,
-        'phone_no' => 20,
-        'extension' => 20,
-        'promo_code' => 255,
+        'registration_set'  => 80,
+        'address1'          => 512,
+        'address2'          => 512,
+        'zipcode'           => 16,
+        'city'              => 64,
+        'state_province'    => 64,
+        'country'           => 128,
+        'country_code'      => 20, // This is the phone number’s country code, not the ISO code of country field.
+        'area_code'         => 20,
+        'phone_no'          => 20,
+        'extension'         => 20,
+        'promo_code'        => 255,
     ];
 
     /**
@@ -87,7 +87,7 @@ class FieldsSizeValidator
     {
         if (array_key_exists($name, $this->fields)) {
             if (strlen($arguments[0]) > $this->fields[ $name ]) {
-                if ($this->useLimit && ! in_array($name, [
+                if ($this->useLimit && !in_array($name, [
                         'email',
                         'password',
                     ])) {
@@ -106,7 +106,7 @@ class FieldsSizeValidator
 
     public function event_id($id)
     {
-        if (! is_numeric($id) || $id <= 0) {
+        if (!is_numeric($id) || $id <= 0) {
             throw new SixConnexFiledSizeException('Id field not valid');
         }
 

@@ -20,7 +20,7 @@ class SixConnexCall implements CallBody
 
     public function setApiCall(string $type = 'read'): self
     {
-        if (! in_array($type, [
+        if (!in_array($type, [
             static::TYPE_READ,
             static::TYPE_READALL,
             static::TYPE_CREATE,

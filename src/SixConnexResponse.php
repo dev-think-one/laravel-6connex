@@ -40,7 +40,7 @@ class SixConnexResponse
      */
     public function outputCollection(): Collection
     {
-        if (! $this->apicallsetoutput) {
+        if (!$this->apicallsetoutput) {
             $this->apicallsetoutput = $this->raw
                 ->collect('apicallsetoutput')
                 ->map(fn ($body) => new SixConnexOutput($body));

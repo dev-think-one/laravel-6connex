@@ -32,14 +32,14 @@ class ApiRequest implements CallBody
     {
         $this->username = $username;
         $this->password = $password;
-        $this->url = $url;
+        $this->url      = $url;
 
         $this->call = new SixConnexCall();
 
         $this->client = Http::withOptions($options['guzzle'] ?? [])
                             ->withHeaders(array_merge([
                                 'Content-Type' => 'application/json',
-                                'Accept' => 'application/json',
+                                'Accept'       => 'application/json',
                             ], ($options['headers'] ?? [])));
     }
 
@@ -85,8 +85,8 @@ class ApiRequest implements CallBody
     protected function body(): array
     {
         return [
-            'apiUsername' => $this->username,
-            'apiPassword' => $this->password,
+            'apiUsername'     => $this->username,
+            'apiPassword'     => $this->password,
             'apicallsetinput' => $this->getCallBody(),
         ];
     }

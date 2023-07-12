@@ -5,11 +5,11 @@ namespace LaravelSixConnex;
 
 interface CallBody
 {
-    const TYPE_READ = 'read';
+    const TYPE_READ    = 'read';
     const TYPE_READALL = 'readall';
-    const TYPE_CREATE = 'create';
-    const TYPE_UPDATE = 'update';
-    const TYPE_DELETE = 'delete';
+    const TYPE_CREATE  = 'create';
+    const TYPE_UPDATE  = 'update';
+    const TYPE_DELETE  = 'delete';
 
     public function addOption($key, $value = null): CallBody;
 

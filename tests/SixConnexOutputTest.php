@@ -12,9 +12,9 @@ class SixConnexOutputTest extends TestCase
     public function output_info()
     {
         $output = new SixConnexOutput([
-            'test' => 'testValue',
-            '_apicall' => 'create',
-            '_apicallresultcode' => 0,
+            'test'                  => 'testValue',
+            '_apicall'              => 'create',
+            '_apicallresultcode'    => 0,
             '_apicallresultmessage' => 'test message',
         ]);
 
