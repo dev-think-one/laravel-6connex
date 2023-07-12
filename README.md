@@ -31,10 +31,15 @@ SIXCONNEX_API_PASSWORD="apipassword"
 
 ### Formatted Response
 
-```injectablephp
+```php
 /** @var SixConnexOutput $output */
-$output = SixConnex::usersRequest('read', ['email'=>'pieter.tester@6connex.test', 'event_id' => 123])
-    ->call()->outputFirst();
+$output = SixConnex::usersRequest('read', [
+        'email'=>'pieter.tester@6connex.test', 
+        'event_id' => 123
+    ])
+    ->call()
+    ->outputFirst();
+    
 if($output->successful()) {
     $address = $output->json('address1');
     $events = $output->collect('events');
@@ -46,9 +51,11 @@ if($output->successful()) {
 Call
 
 ```injectablephp
-SixConnex::usersRequest()->setApiCall('read')
+SixConnex::usersRequest()
+    ->setApiCall('read')
     ->addOption('email', 'pieter.tester@6connex.test')
-    ->call()->json();
+    ->call()
+    ->json();
 ```
 or
 ```injectablephp
@@ -105,16 +112,18 @@ Result
 ### Package also support "multiplicity"
 
 ```injectablephp
- SixConnex::usersRequest('read', ['email'=>'test@test1.com', 'event_id' => 123])
-     ->addNewCall(
-        ( new \LaravelSixConnex\SixConnexCall )
-        ->addOption('email', 'test@test2.com')
-     )
-     ->addNewCall(
-        ( new \LaravelSixConnex\SixConnexCall )
-        ->addOption(['email' => 'not@in.db'])
-     )
-     ->call()->json();
+ SixConnex::usersRequest('read', [
+        'email'=>'test@test1.com', 
+        'event_id' => 123
+    ])
+    ->addNewCall(
+        ( new \LaravelSixConnex\SixConnexCall )->addOption('email', 'test@test2.com')
+    )
+    ->addNewCall(
+        ( new \LaravelSixConnex\SixConnexCall )->addOption(['email' => 'not@in.db'])
+    )
+    ->call()
+    ->json();
 ```
 
 Result
