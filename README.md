@@ -50,7 +50,7 @@ if($output->successful()) {
 
 Call
 
-```injectablephp
+```php
 SixConnex::usersRequest()
     ->setApiCall('read')
     ->addOption('email', 'pieter.tester@6connex.test')
@@ -58,14 +58,14 @@ SixConnex::usersRequest()
     ->json();
 ```
 or
-```injectablephp
+```php
 SixConnex::usersRequest()->setApiCall('read')
     ->addOption('email', 'pieter.tester@6connex.test')
     ->addOption('event_id', 123)
     ->call()->json();
 ```
 or
-```injectablephp
+```php
 SixConnex::usersRequest()->setApiCall('read')
     ->addOption(['email'=>'pieter.tester@6connex.test', 'event_id' => 123])
     ->call()->json();
@@ -111,7 +111,7 @@ Result
 
 ### Package also support "multiplicity"
 
-```injectablephp
+```php
  SixConnex::usersRequest('read', [
         'email'=>'test@test1.com', 
         'event_id' => 123
